@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>dfdsfsf.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #bcbec4;}
+.s2 { color: #6aab73;}
+.s3 { color: #2aacb8;}
+.s4 { color: #cf8e6d;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+dfdsfsf.py</font>
+</center></td></tr></table>
+<pre><span class="s0">bag </span><span class="s1">= {</span>
+    <span class="s2">&quot;ยา&quot;</span><span class="s1">: </span><span class="s3">3</span><span class="s1">,</span>
+    <span class="s2">&quot;แอปเปิ้ล&quot;</span><span class="s1">: </span><span class="s3">5</span><span class="s1">,</span>
+    <span class="s2">&quot;ระเบิด&quot;</span><span class="s1">: </span><span class="s3">1</span>
+<span class="s1">}</span>
+
+<span class="s4">while True</span><span class="s1">:</span>
+
+    <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;</span><span class="s4">\n</span><span class="s2">========== INVENTORY ==========&quot;</span><span class="s1">)</span>
+    <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;1. ดูกระเป๋า&quot;</span><span class="s1">)</span>
+    <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;2. ใช้ไอเท็ม&quot;</span><span class="s1">)</span>
+    <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;3. เก็บไอเท็ม&quot;</span><span class="s1">)</span>
+    <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;4. ทิ้งไอเท็ม&quot;</span><span class="s1">)</span>
+    <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;5. ออกเกม&quot;</span><span class="s1">)</span>
+
+    <span class="s5"># ================= เลือกเมนู =================</span>
+    <span class="s4">try</span><span class="s1">:</span>
+        <span class="s0">user </span><span class="s1">= </span><span class="s0">int</span><span class="s1">(</span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;กรุณาเลือกเมนู : &quot;</span><span class="s1">))</span>
+
+    <span class="s4">except </span><span class="s0">ValueError</span><span class="s1">:</span>
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;กรุณาใส่เป็นตัวเลข&quot;</span><span class="s1">)</span>
+        <span class="s4">continue</span>
+
+    <span class="s5"># ================= ดูกระเป๋า =================</span>
+    <span class="s4">if </span><span class="s0">user </span><span class="s1">== </span><span class="s3">1</span><span class="s1">:</span>
+
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;</span><span class="s4">\n</span><span class="s2">========== กระเป๋า ==========&quot;</span><span class="s1">)</span>
+
+        <span class="s4">if </span><span class="s0">len</span><span class="s1">(</span><span class="s0">bag</span><span class="s1">) == </span><span class="s3">0</span><span class="s1">:</span>
+            <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;กระเป๋าว่าง&quot;</span><span class="s1">)</span>
+
+        <span class="s4">else</span><span class="s1">:</span>
+            <span class="s4">for </span><span class="s0">i </span><span class="s4">in </span><span class="s0">bag</span><span class="s1">:</span>
+                <span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;</span><span class="s4">{</span><span class="s0">i</span><span class="s4">} </span><span class="s2">มี </span><span class="s4">{</span><span class="s0">bag</span><span class="s1">[</span><span class="s0">i</span><span class="s1">]</span><span class="s4">} </span><span class="s2">ชิ้น&quot;</span><span class="s1">)</span>
+
+    <span class="s5"># ================= ใช้ไอเท็ม =================</span>
+    <span class="s4">elif </span><span class="s0">user </span><span class="s1">== </span><span class="s3">2</span><span class="s1">:</span>
+
+        <span class="s0">use </span><span class="s1">= </span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;กรุณาเลือกไอเท็มที่ต้องการใช้ : &quot;</span><span class="s1">)</span>
+
+        <span class="s5"># ---------- ไม่มีไอเท็ม ----------</span>
+        <span class="s4">if </span><span class="s0">use </span><span class="s4">not in </span><span class="s0">bag</span><span class="s1">:</span>
+            <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;ไม่มีไอเท็มนี้&quot;</span><span class="s1">)</span>
+            <span class="s4">continue</span>
+
+        <span class="s5"># ---------- ของหมด ----------</span>
+        <span class="s4">elif </span><span class="s0">bag</span><span class="s1">[</span><span class="s0">use</span><span class="s1">] &lt;= </span><span class="s3">0</span><span class="s1">:</span>
+            <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;ไอเท็มหมดแล้ว&quot;</span><span class="s1">)</span>
+            <span class="s4">continue</span>
+
+        <span class="s5"># ---------- ใช้สำเร็จ ----------</span>
+        <span class="s0">bag</span><span class="s1">[</span><span class="s0">use</span><span class="s1">] -= </span><span class="s3">1</span>
+
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;ใช้ </span><span class="s4">{</span><span class="s0">use</span><span class="s4">} </span><span class="s2">สำเร็จ&quot;</span><span class="s1">)</span>
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;เหลือ </span><span class="s4">{</span><span class="s0">bag</span><span class="s1">[</span><span class="s0">use</span><span class="s1">]</span><span class="s4">} </span><span class="s2">ชิ้น&quot;</span><span class="s1">)</span>
+
+        <span class="s5"># ---------- ถ้าของหมดให้ลบ ----------</span>
+        <span class="s4">if </span><span class="s0">bag</span><span class="s1">[</span><span class="s0">use</span><span class="s1">] == </span><span class="s3">0</span><span class="s1">:</span>
+            <span class="s4">del </span><span class="s0">bag</span><span class="s1">[</span><span class="s0">use</span><span class="s1">]</span>
+            <span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;</span><span class="s4">{</span><span class="s0">use</span><span class="s4">} </span><span class="s2">หมดจากกระเป๋าแล้ว&quot;</span><span class="s1">)</span>
+
+    <span class="s5"># ================= เก็บไอเท็ม =================</span>
+    <span class="s4">elif </span><span class="s0">user </span><span class="s1">== </span><span class="s3">3</span><span class="s1">:</span>
+
+        <span class="s0">new_item </span><span class="s1">= </span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;พิมพ์ชื่อไอเท็มที่ต้องการเก็บ : &quot;</span><span class="s1">)</span>
+
+        <span class="s4">try</span><span class="s1">:</span>
+            <span class="s0">amount </span><span class="s1">= </span><span class="s0">int</span><span class="s1">(</span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;จำนวนที่ต้องการเก็บ : &quot;</span><span class="s1">))</span>
+
+        <span class="s4">except </span><span class="s0">ValueError</span><span class="s1">:</span>
+            <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;กรุณาใส่จำนวนเป็นตัวเลข&quot;</span><span class="s1">)</span>
+            <span class="s4">continue</span>
+
+        <span class="s5"># ---------- ถ้าจำนวนติดลบ ----------</span>
+        <span class="s4">if </span><span class="s0">amount </span><span class="s1">&lt;= </span><span class="s3">0</span><span class="s1">:</span>
+            <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;จำนวนต้องมากกว่า 0&quot;</span><span class="s1">)</span>
+            <span class="s4">continue</span>
+
+        <span class="s5"># ---------- มีอยู่แล้ว ----------</span>
+        <span class="s4">if </span><span class="s0">new_item </span><span class="s4">in </span><span class="s0">bag</span><span class="s1">:</span>
+            <span class="s0">bag</span><span class="s1">[</span><span class="s0">new_item</span><span class="s1">] += </span><span class="s0">amount</span>
+
+        <span class="s5"># ---------- ยังไม่มี ----------</span>
+        <span class="s4">else</span><span class="s1">:</span>
+            <span class="s0">bag</span><span class="s1">[</span><span class="s0">new_item</span><span class="s1">] = </span><span class="s0">amount</span>
+
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;ได้รับ </span><span class="s4">{</span><span class="s0">new_item</span><span class="s4">} </span><span class="s2">จำนวน </span><span class="s4">{</span><span class="s0">amount</span><span class="s4">} </span><span class="s2">ชิ้น&quot;</span><span class="s1">)</span>
+
+    <span class="s5"># ================= ทิ้งไอเท็ม =================</span>
+    <span class="s4">elif </span><span class="s0">user </span><span class="s1">== </span><span class="s3">4</span><span class="s1">:</span>
+
+        <span class="s0">choose </span><span class="s1">= </span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;พิมพ์ไอเท็มที่ต้องการทิ้ง : &quot;</span><span class="s1">)</span>
+
+        <span class="s5"># ---------- ไม่มีไอเท็ม ----------</span>
+        <span class="s4">if </span><span class="s0">choose </span><span class="s4">not in </span><span class="s0">bag</span><span class="s1">:</span>
+            <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;ไม่มีไอเท็มนี้&quot;</span><span class="s1">)</span>
+            <span class="s4">continue</span>
+
+        <span class="s4">try</span><span class="s1">:</span>
+            <span class="s0">amount </span><span class="s1">= </span><span class="s0">int</span><span class="s1">(</span><span class="s0">input</span><span class="s1">(</span><span class="s2">&quot;จำนวนที่ต้องการทิ้ง : &quot;</span><span class="s1">))</span>
+
+        <span class="s4">except </span><span class="s0">ValueError</span><span class="s1">:</span>
+            <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;กรุณาใส่จำนวนเป็นตัวเลข&quot;</span><span class="s1">)</span>
+            <span class="s4">continue</span>
+
+        <span class="s5"># ---------- จำนวนผิด ----------</span>
+        <span class="s4">if </span><span class="s0">amount </span><span class="s1">&lt;= </span><span class="s3">0</span><span class="s1">:</span>
+            <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;จำนวนต้องมากกว่า 0&quot;</span><span class="s1">)</span>
+            <span class="s4">continue</span>
+
+        <span class="s5"># ---------- ของไม่พอ ----------</span>
+        <span class="s4">if </span><span class="s0">amount </span><span class="s1">&gt; </span><span class="s0">bag</span><span class="s1">[</span><span class="s0">choose</span><span class="s1">]:</span>
+            <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;จำนวนไอเท็มไม่พอ&quot;</span><span class="s1">)</span>
+            <span class="s4">continue</span>
+
+        <span class="s5"># ---------- ทิ้งของ ----------</span>
+        <span class="s0">bag</span><span class="s1">[</span><span class="s0">choose</span><span class="s1">] -= </span><span class="s0">amount</span>
+
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;ทิ้ง </span><span class="s4">{</span><span class="s0">choose</span><span class="s4">} </span><span class="s2">จำนวน </span><span class="s4">{</span><span class="s0">amount</span><span class="s4">} </span><span class="s2">ชิ้นแล้ว&quot;</span><span class="s1">)</span>
+
+        <span class="s5"># ---------- ถ้าหมดให้ลบ ----------</span>
+        <span class="s4">if </span><span class="s0">bag</span><span class="s1">[</span><span class="s0">choose</span><span class="s1">] == </span><span class="s3">0</span><span class="s1">:</span>
+            <span class="s4">del </span><span class="s0">bag</span><span class="s1">[</span><span class="s0">choose</span><span class="s1">]</span>
+            <span class="s0">print</span><span class="s1">(</span><span class="s2">f&quot;</span><span class="s4">{</span><span class="s0">choose</span><span class="s4">} </span><span class="s2">ถูกลบออกจากกระเป๋าแล้ว&quot;</span><span class="s1">)</span>
+
+    <span class="s5"># ================= ออกเกม =================</span>
+    <span class="s4">elif </span><span class="s0">user </span><span class="s1">== </span><span class="s3">5</span><span class="s1">:</span>
+
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;ออกจากเกม...&quot;</span><span class="s1">)</span>
+        <span class="s4">break</span>
+
+    <span class="s5"># ================= เมนูผิด =================</span>
+    <span class="s4">else</span><span class="s1">:</span>
+        <span class="s0">print</span><span class="s1">(</span><span class="s2">&quot;กรุณาเลือกเมนูให้ถูกต้อง&quot;</span><span class="s1">)</span></pre>
+</body>
+</html>
